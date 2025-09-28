@@ -1,1 +1,61 @@
 # Portfolio
+
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+    <title>Portfolio - Sienna Halladeen</title>
+    <meta charset = "utf-8">
+
+    <!-- Link to CSS files -->
+     <link rel="stylesheet" href="style.css">
+    </head>
+  
+    <body>
+
+        <!-- Navigation bar -->
+        <nav>
+            <div class="logo">SH</div>
+            <div class="nav-links">
+              <a href="index.html">Home</a> |
+              <a href="about.html">About Me</a> |
+              <a href="projects.html">Projects</a> |
+              <a href="education.html">Education</a> |
+              <a href="services.html">Services</a> |
+              <a href="contact.html">Contact</a>
+            </div>
+          </nav>    
+
+        <section id="home">
+            <h1>Welcome to My Portfolio</h1>
+            <p>This is my homepage</p>
+
+            <a href="Resume - Sienna Halladeen.pdf" target="_blank" class="resume-link">View My Resume</a>
+
+          </section>
+
+          
+
+
+          <script>
+            window.addEventListener('DOMContentLoaded', () => {
+              const logo = document.querySelector('.logo');
+              setTimeout(() => {
+                logo.classList.add('animate');
+              }, 300);
+            });
+        
+            // Fade-in for sections on scroll
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                  entry.target.classList.add('visible');
+                }
+              });
+            }, { threshold: 0.1 });
+        
+            sections.forEach(section => observer.observe(section));
+          </script>
+
+    </body>
+
